@@ -1,4 +1,5 @@
-# API
+# Alpha
+
 ```.java
     //创建build对象
     ConstructionImpl.Build build = new ConstructionImpl.Build();
@@ -7,12 +8,13 @@
     build.addGlobalParams("name", "value");
 
     //添加默认参数，默认参数会在每个请求的url后面添加已经添加的请求参数，可以看下面实例
-       build.addDefaultParams("name","value")
+    build.addDefaultParams("name","value")
 
 
 
     //AKXApi 设置api方法如下
-    @Get("{akx}pub/api/getHome")//{akx}表示替换占位参数akx对应值
+    @Get("{akx}pub/api/getHome") //{akx}表示替换占位参数akx对应值
+    
     HttpDataGet<GetHomeBean> getHomeNew(@params("version")String version);//返回值的泛型可以是string，或者服务器返回对象的实体。方法参数带Params标签如果是get 请求方式会向url尾端添加查询参数，如果是post 请求方式会以表单方式提交
 
     @Post("{akx}usr/api/markNoticRead")
@@ -103,7 +105,7 @@
 ```
 
 
-# 广播（HandleMsg）
+## 广播（HandleMsg）
 
 * 如果无特殊要求可以用HandleMsg代替BroadcastReceiver的使用下面是HandleMsg的使用方式
 
@@ -130,7 +132,7 @@
     
 ```
 
-# 下载(D)
+## 下载(D)
 * D下载通过发出广播向app全局通过指定文件的下载进度和状态。
 ```.java
     //添加下载任务
@@ -147,28 +149,28 @@
     
     D.stopDownload("targetUrl");//停止下载任务
 
+    D.getDownloadInfo("targetUrl");//获取下载信息
+
+    
 ```
 
-# 动画链
-```.java
-    //执行单个动画
-    AnimatorHelper.build().moveToX(mImgSign, w, 0, 500).start();
-    
-    //动画链的执行动作分别有
-    //after 动画执行之后执行
-    //with 动画执行的同时执行
-    //before 动画执行之前执行
-    
-    //多个动画依次或者同时执行
-    AnimatorAgent build = AnimatorHelper.build();
-    AnimatorAction move = build.moveToX(view, 100, 200, 200);
-    AnimatorAction scale = build.scaleX(view, 1, 1.2, 200);
-    AnimatorAction alpha = build.alpha(view, 0, 1, 200).after(move.with(scale));
-    alpha.start();
-       
+
+## 上传
+* D上传通过发出广播向app全局通过指定文件的下载进度和状态。
+```java
+
+    /**
+     * @params targetUrl 上传服务器的地址
+     * @params localPath 本地上传文件的地址
+     * @params mark 上传文件时会通过mark标记的广播进行通知
+     * @params tab 标记对象，可以为空
+     **/
+    D.upload( targetUrl,  localPath,  mark, tab);
+
 ```
 
-# 对象取值
+
+## 对象取值
 ```.java
      class A{
         B b;
