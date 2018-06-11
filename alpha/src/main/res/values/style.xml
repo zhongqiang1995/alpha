@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--dialog样式-->
+    <style name="AlphaDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="colorPrimary">@color/alpha_white</item>
+        <item name="colorPrimaryDark">@color/alpha_white</item>
+        <item name="colorAccent">@color/alpha_black</item>
+    </style>
+
+
+
+    <style name="AlphaDialogAnimationBottomInTime200" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/alpha_translate_y_1_to_0_time_200</item>
+        <item name="android:windowExitAnimation">@anim/alpha_translate_y_0_to_1_time_200</item>
+    </style>
+
+    <style name="AlphaFullWindowTheme" parent="AlphaTheme">
+        <item name="android:windowBackground">@color/alpha_black</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+
+    <style name="AlphaTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/alpha_white</item>
+        <item name="colorPrimaryDark">@color/alpha_white</item>
+        <item name="colorAccent">@color/alpha_black</item>
+    </style>
+</resources>

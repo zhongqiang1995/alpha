@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.zhlib">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true">
+        <service android:name="com.azl.file.service.FileActionService" />
+
+        <activity
+            android:name="com.azl.activity.picture.PicturePreview"
+            android:theme="@style/AlphaFullWindowTheme"/>
+        <activity android:name="com.azl.activity.photo.PhotoPreviewActivity"
+            android:theme="@style/AlphaFullWindowTheme"/>
+    </application>
+
+</manifest>

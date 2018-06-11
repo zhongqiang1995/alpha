@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.azl.view.carouse.ScaleLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <FrameLayout
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+    >
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/imgPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:actualImageScaleType="focusCrop"
+            app:placeholderImageScaleType="focusCrop"
+            app:roundedCornerRadius="10dp" />
+    </FrameLayout>
+</com.azl.view.carouse.ScaleLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.dy.alp.MainActivity">
+
+
+    <Button
+        android:id="@+id/bt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="viewPager" />
+
+    <Button
+        android:id="@+id/bt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="listMore" />
+
+    <Button
+        android:id="@+id/bt3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UPLOAD" />
+
+    <Button
+        android:id="@+id/bt4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UPLOAD" />
+
+
+    <Button
+        android:id="@+id/bt5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MUTYPE" />
+
+    <Button
+        android:id="@+id/bt6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SWITCH_LAYOUT" />
+    <Button
+        android:id="@+id/bt7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FLOW_LAYOUT" />
+    <Button
+        android:id="@+id/bt8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GRID_VIEW" />
+    <Button
+        android:id="@+id/bt9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TEXT_HIGHLIGHT" />
+    <Button
+        android:id="@+id/bt10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BT_GRID_SELECT" />
+    <Button
+        android:id="@+id/bt11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ZoomActivity" />
+</LinearLayout>

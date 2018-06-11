@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="GridSelectFileView">
+        <attr name="gsf_is_offset_delete" format="boolean"></attr>
+    </declare-styleable>
+    <declare-styleable name="FlowLayout">
+        <attr name="FlowLayoutGravity">
+            <enum name="left" value="1"></enum>
+            <enum name="right" value="2"></enum>
+            <enum name="center" value="3"></enum>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="GifView">
+        <attr name="play" format="boolean" />
+        <attr name="playSrc" format="reference" />
+        <attr name="isCycle" format="boolean" />
+    </declare-styleable>
+
+
+    <declare-styleable name="CommonView">
+        <attr name="mc_status">
+            <enum name="info" value="1"></enum>
+            <enum name="loading" value="2"></enum>
+            <enum name="noData" value="3"></enum>
+            <enum name="noNet" value="4"></enum>
+            <enum name="content" value="5"></enum>
+        </attr>
+        <attr name="mc_error_layout" format="reference"></attr>
+        <attr name="mc_loading_layout" format="reference"></attr>
+        <attr name="mc_noData_layout" format="reference"></attr>
+        <attr name="mc_noNet_layout" format="reference"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="AdaptiveView">
+        <attr name="ma_horizontal_interval" format="dimension"></attr>
+        <attr name="ma_vertical_interval" format="dimension"></attr>
+    </declare-styleable>
+    <declare-styleable name="PageCarouselView">
+        <attr name="mp_auto_carouse" format="boolean"></attr>
+        <attr name="mp_carouse_time" format="float"></attr>
+        <attr name="mp_tab_visibility" format="boolean"></attr>
+    </declare-styleable>
+</resources>

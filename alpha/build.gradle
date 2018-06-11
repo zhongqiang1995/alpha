@@ -1,0 +1,83 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+android {
+    compileSdkVersion project.ext.compileSdkVersion
+    buildToolsVersion project.ext.buildToolsVersion
+
+    defaultConfig {
+        vectorDrawables {
+            useSupportLibrary true
+        }
+        minSdkVersion project.ext.minSdkVersion
+        targetSdkVersion project.ext.targetSdkVersion
+        versionCode project.ext.versionCode
+        versionName project.ext.versionName
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro', 'proguard-fresco.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+//    compileOptions {
+//        targetCompatibility JavaVersion.VERSION_1_8
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//    }
+}
+
+dependencies {
+
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.0'
+    implementation 'com.android.support:cardview-v7:27.1.0'
+    implementation 'com.android.support:recyclerview-v7:27.1.0'
+    implementation 'com.android.support:design:27.1.0'
+    implementation 'com.android.support:gridlayout-v7:27.1.0'
+    compileOnly "com.android.support:support-annotations:27.1.0"
+    compileOnly "com.android.support:support-core-utils:27.1.0"
+
+    implementation 'com.google.code.gson:gson:2.8.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.8.0'
+    implementation "com.nineoldandroids:library:2.4.0"
+
+    //fresco
+    implementation 'com.facebook.fresco:fresco:1.8.1'
+    implementation 'com.facebook.fresco:animated-gif:1.8.1'
+    implementation 'com.facebook.fresco:imagepipeline-okhttp3:1.8.1'
+    implementation 'com.facebook.fresco:imagepipeline:1.8.1'
+    implementation 'com.facebook.fresco:drawee:1.8.1'
+    implementation 'com.facebook.fresco:fbcore:1.8.1'
+
+    //test
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2') {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+}
+
+uploadArchives {
+    def mavenUsr = java.lang.System.getenv()["MAVEN_USR"]
+    def mavenPwd = java.lang.System.getenv()["MAVEN_PWD"]
+    def mavenUrlReleases = java.lang.System.getenv()["MAVEN_URL_RELEASE"]
+    def mavenUrlSnapshots = java.lang.System.getenv()["MAVEN_URL_SNA"]
+    repositories {
+        mavenDeployer {
+            pom.groupId = "com.dy.common"
+            pom.artifactId = "alpha"
+            pom.version = project.ext.sdkVersion
+            repository(url: "http://maven.jxzy.com/repository/maven-releases/") {
+                authentication(userName: "deployment", password: "sco")
+            }
+
+            snapshotRepository(url: "http://maven.jxzy.com/repository/maven-snapshots/") {
+                authentication(userName: "deployment", password: "sco")
+            }
+        }
+    }
+}

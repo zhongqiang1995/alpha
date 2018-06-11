@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">alpha</string>
+    <string name="alpha_save">保存</string>
+    <string name="alpha_photo_save_dir">图片已保存至%s文件夹</string>
+    <string name="alpha_save_error">保存失败</string>
+    <string name="alpha_save_error_please_per">保存失败，请先获取权限</string>
+    <string name="alpha_save_img_format_local_error">当前图片格式不支持保存在本地</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/alpha_black"
+    tools:context="com.azl.activity.photo.PhotoPreviewActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <HorizontalScrollView
+        android:id="@+id/tabScroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="30dp"
+        android:scrollbars="none">
+
+        <RadioGroup
+            android:id="@+id/tabLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="7dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"></RadioGroup>
+    </HorizontalScrollView>
+
+</FrameLayout>

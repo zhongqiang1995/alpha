@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.dy.alp.activity.UploadFileActivity">
+
+
+    <EditText
+        android:id="@+id/edText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="/storage/emulated/0/1.rar"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doClick1"
+        android:text="upload" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="stop"
+        android:onClick="doClick2"
+        />
+</LinearLayout>

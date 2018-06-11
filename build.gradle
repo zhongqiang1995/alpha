@@ -1,0 +1,54 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    def rHost = readHostConfig()
+    def onVersion = "1.0.3-SNAPSHOT"//dev的版本依赖的sdk版本号
+    if (rHost == "chk") {
+        onVersion = "1.0.4-SNAPSHOT"//chk的版本依赖的sdk版本号
+    } else if (rHost == "chk2" || rHost == "releases") {
+        onVersion = "1.0.5-SNAPSHOT"//chk2的版本依赖的sdk版本号
+    }
+    project.ext {
+        compileSdkVersion = 27
+        buildToolsVersion = "27.0.3"
+        minSdkVersion = 16
+        targetSdkVersion = 27
+        versionCode = 1
+        versionName = "1.0"
+        sdkVersion = onVersion
+        host = rHost
+    }
+    repositories {
+        maven {
+            url "https://maven.google.com"
+        }
+        maven { url "https://jitpack.io" }
+        jcenter()
+    }
+}
+
+String readHostConfig() {
+    def s = System.getenv()['AKX_HOST']
+    println("host:" + s)
+    if (!s) {
+        s = "dev"
+    }
+    return s;
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.azl.view.grid.select.GridSelectActionView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:src="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/imgAddPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/alpha_img_rect_add" />
+
+</com.azl.view.grid.select.GridSelectActionView>
