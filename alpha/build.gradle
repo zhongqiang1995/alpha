@@ -60,24 +60,3 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
 }
-
-uploadArchives {
-    def mavenUsr = java.lang.System.getenv()["MAVEN_USR"]
-    def mavenPwd = java.lang.System.getenv()["MAVEN_PWD"]
-    def mavenUrlReleases = java.lang.System.getenv()["MAVEN_URL_RELEASE"]
-    def mavenUrlSnapshots = java.lang.System.getenv()["MAVEN_URL_SNA"]
-    repositories {
-        mavenDeployer {
-            pom.groupId = "com.dy.common"
-            pom.artifactId = "alpha"
-            pom.version = project.ext.sdkVersion
-            repository(url: "http://maven.jxzy.com/repository/maven-releases/") {
-                authentication(userName: "deployment", password: "sco")
-            }
-
-            snapshotRepository(url: "http://maven.jxzy.com/repository/maven-snapshots/") {
-                authentication(userName: "deployment", password: "sco")
-            }
-        }
-    }
-}
