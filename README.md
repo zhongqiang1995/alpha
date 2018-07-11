@@ -1,14 +1,8 @@
-[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
-
-# Alpha
-
-```.java
+```java
     //创建build对象
     ConstructionImpl.Build build = new ConstructionImpl.Build();
-
     //添加默认占位参数,替换用{}包括的字符值，可以看下面实例
     build.addGlobalParams("name", "value");
-
     //添加默认参数，默认参数会在每个请求的url后面添加已经添加的请求参数，可以看下面实例
     build.addDefaultParams("name","value")
 
@@ -16,19 +10,16 @@
 
     //AKXApi 设置api方法如下
     @Get("{akx}pub/api/getHome") //{akx}表示替换占位参数akx对应值
-    
     HttpDataGet<GetHomeBean> getHomeNew(@params("version")String version);//返回值的泛型可以是string，或者服务器返回对象的实体。方法参数带Params标签如果是get 请求方式会向url尾端添加查询参数，如果是post 请求方式会以表单方式提交
 
     @Post("{akx}usr/api/markNoticRead")
     HttpDataGet<CommonBean> markNoticRead(@Param("token") String token, @JsonBody Object nids);//JsonBody 接收对象实体或者json字符串，会以请求体的方式向服务器提交json数据
 
-    //AKXApiServer 获取方法如下
+
 
     //get方法演示
     HttpDataGet dataGet=AKXApiServer.api().getHomeNew("2");
-
-
-
+    
     //post方式演示
     class Persion{
         String name;
@@ -41,9 +32,7 @@
     HttpDataGet dataGet1=AKXApiServer.api().markNoticRead("token", {\"name\":\"bean\"});
 
  ```
- ```.java 
-
-
+ ```java 
     //GET和POST方法返回的HttpDataGet对应需要注册com.azl.obs.retrofit.itf.Observer进行监听,如下
     //准备一个作为请求实体的类
     class Body{
@@ -109,9 +98,9 @@
 
 ## 广播（HandleMsg）
 
-* 如果无特殊要求可以用HandleMsg代替BroadcastReceiver的使用下面是HandleMsg的使用方式
+> 如果无特殊要求可以用HandleMsg代替BroadcastReceiver的使用下面是HandleMsg的使用方式
 
-```.java
+```java
 
     //注册广播，需要监听到广播发出需要先注册
     HandleMsg.bind(this);//参数为需要监听的对象，注册成功后会查找$符号开头结尾的方法，并判断是否是广播监听方法
@@ -135,8 +124,8 @@
 ```
 
 ## 下载(D)
-* D下载通过发出广播向app全局通过指定文件的下载进度和状态。
-```.java
+> D下载通过发出广播向app全局通过指定文件的下载进度和状态。
+```java
     //添加下载任务
     
     //targetUrl 下载文件的url
@@ -158,7 +147,7 @@
 
 
 ## 上传
-* D上传通过发出广播向app全局通过指定文件的下载进度和状态。
+> D上传通过发出广播向app全局通过指定文件的下载进度和状态。
 ```java
 
     /**
@@ -173,7 +162,7 @@
 
 
 ## 对象取值
-```.java
+```java
      class A{
         B b;
     }
@@ -204,7 +193,3 @@
     name= (String) ObjectValueUtil.getInstance().getValueObject(a,"b/c/d/name");
     //如果其中路径的值为null会返回null，防止报空指针异常
 ```
-
-
-
-
